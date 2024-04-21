@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-on.css">
+</head>
+
+<body>
+  <div class="sidebar branding-below">
+    <form>
+      <div class="block">
+        <label for="apiKey">OpenAI API Key</label>
+        <input type="password" id="apiKey" class="input-field">
+      </div>
+      <div class="block">
+        <button type="button" class="blue" id="saveButton">Save</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.getElementById('saveButton').addEventListener('click', saveApiKey);
+
+  function saveApiKey() {
+    const apiKey = document.getElementById('apiKey').value;
+    google.script.run
+      .withSuccessHandler(function() {
+        google.script.host.close();
+        console.log('API key saved successfully');
+      })
+      .withFailureHandler(function(error) {
+        console.error('Failed to save API key:', error);
+      })
+      .saveApiKey(apiKey);
+  }
+  </script>
+</body>
+
+</html>
