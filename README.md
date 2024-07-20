@@ -17,10 +17,10 @@ A simple script to use OpenAI's GPT models in Google Sheets. This allows you to 
 You now have access to a new `=LLM()` function in Google Sheets. You can use it like this:
 
 ```scala
-=LLM(<input_text>, "Summarise the text", "gpt-3.5-turbo", 0)
+=LLM(<input_text>, "Summarise the text", "gpt-4o-mini", 0)
 ```
 
-By default, the function uses the `gpt-3.5-turbo` model with a temperature of `0`, but you can change it to `gpt-4` for more advanced tasks or increase the temperature for more creative responses.
+By default, the function uses the `gpt-4o-mini` model with a temperature of `0`, but you can change it to `gpt-4` for more advanced tasks or increase the temperature for more creative responses.
 
 ## To-do
 - [ ] Add support for non-OpenAI models

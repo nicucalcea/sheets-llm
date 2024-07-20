@@ -49,12 +49,12 @@ function getApiKey() {
  * Custom function to send a request to the OpenAI API.
  * @param {string} inputText The text to send to the API.
  * @param {string} prompt The prompt to use.
- * @param {string=} model The model to use (default: 'gpt-3.5-turbo').
+ * @param {string=} model The model to use (default: 'gpt-4o-mini').
  * @param {string=} temperature The temperature to use, lower is more precise, higher is more creative (default: '0.1').
  * @returns {string} The response from the OpenAI API.
  * @customfunction
  */
-function LLM(inputText, prompt, model = 'gpt-3.5-turbo', temperature = 0.1) {
+function LLM(inputText, prompt, model = 'gpt-4o-mini', temperature = 0) {
   const apiKey = getApiKey();
   if (!apiKey) {
     throw new Error('OpenAI API key not set. Please visit the "LLM > Settings" menu to set your API key.');
